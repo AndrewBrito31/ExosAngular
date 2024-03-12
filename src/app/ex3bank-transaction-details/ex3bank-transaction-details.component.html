@@ -1,0 +1,31 @@
+<h2>Exercise 3 - Transaction Details</h2>
+<!--table that renders data from individual transaction using string interpolation-->
+<table class="table">
+<tr>
+    <th>ID</th>
+    <td>{{ transaction?.id }}</td>
+</tr>
+<tr>
+    <th>Amount</th>
+    <td>{{ transaction?.amount }}</td>
+</tr>
+<tr>
+    <th>Balance</th>
+    <td>{{ transaction?.balance }}</td>
+</tr>
+<tr>
+    <th>Label</th>
+    <td>{{ transaction?.label }}</td>
+</tr>
+<tr>
+    <th>Description</th>
+    <td>{{ transaction?.description }}</td>
+</tr>
+<tr>
+    <th>Date</th>
+    <td>{{ transaction?.date }}</td>
+</tr>
+</table>
+
+<!--button to navigate to transactions list using routerLink-->
+<button routerLink="/exercise3">Transactions List</button>

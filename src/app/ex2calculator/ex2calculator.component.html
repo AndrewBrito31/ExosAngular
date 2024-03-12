@@ -1,0 +1,36 @@
+<h2>Exercise 2 - Calculator</h2>
+
+<div class="container">
+    <!-- number entry fields and operation dropdown -->
+    <div class="input-group">
+      <!--two-way data binding usage of ngModel-->
+      <input class="input-field" type="number" [(ngModel)]="operand1" placeholder="Enter number" > 
+      <select class="select-field" [(ngModel)]="operation">
+        <option value="add">+</option>
+        <option value="subtract">-</option>
+        <option value="multiply">x</option>
+        <option value="divide">/</option>
+      </select>
+      <input class="input-field" type="number" [(ngModel)]="operand2" placeholder="Enter number">
+      <!-- Button to trigger the calculation -->
+    <button (click)="calculate()">Calculate</button>
+    </div>
+    
+    <!-- Display area for the result -->
+    <div *ngIf="result !== null" class="result">
+      <h3>Result: {{ result }}</h3>
+    </div>
+  
+    <!-- Historical area for previous calculations -->
+    <div *ngIf="log.length > 0" class="log"> <!-- renders the log to the view if the log array has at least one item-->
+      <h3>Results log</h3>
+      <ul>
+        <li *ngFor="let entry of log"> <!-- iterate the log array using *ngFor directive to generate a list item with the log results-->
+          Time: {{ entry.time }}, Operation: {{ entry.operation }}, Result: {{ entry.result }} <!-- string interpolation to retrieve result values and time and operation type -->
+          <button (click)="removeEntry(entry)">Remove</button> <!-- event binding listening to click event to trigger removeEntry method passing the current entry object -->
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+

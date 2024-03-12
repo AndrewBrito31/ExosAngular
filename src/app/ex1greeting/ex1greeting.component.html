@@ -1,0 +1,45 @@
+<h2>Exercise 1 - Greeting</h2>
+
+<div class="container">
+    <label class="label" for="name">Enter Name:</label>
+    <!-- input field type text for user to enter the name -->
+    <input class="input-field" type="text" id="name" [(ngModel)]="name"> 
+  
+    <!-- Dropdown for selecting font 
+        selected font is bound to the 'font' property using ngModel, 
+        and the 'updateGreeting()' method is called whenever the selection changes-->
+    <label class="label" for="font">Choose Font:</label>
+    <select class="select-field" id="font" [(ngModel)]="font" (change)="updateGreeting()">
+      <option value="Arial">Arial</option>
+      <option value="Times New Roman">Times New Roman</option>
+      <option value="Verdana">Verdana</option>
+      <option value="Calibri">Calibri</option>
+    </select>
+    
+    <!-- input field type number to select font size -->
+    <label class="label" for="size">Choose Size:</label>
+    <input class="input-field" type="number" id="size" [(ngModel)]="size" (input)="updateGreeting()">
+  
+    <!-- checkboxes to select alignment
+        input binds its checked attribute to the expression "alignment" === to value left, center or right,
+        toggling the checkbox based on the 'alignment' property, and triggers the 'updateAlignment() method on change. -->
+    <label class="label">Choose Alignment:</label>
+    <label class="checkbox-label">
+        <input type="checkbox" name="leftAlignment" [checked]="alignment === 'left'" (change)="updateAlignment('left')"> Left
+    </label>
+    <label class="checkbox-label">
+         <input type="checkbox" name="centerAlignment" [checked]="alignment === 'center'" (change)="updateAlignment('center')"> Center
+    </label>      
+    <label class="checkbox-label">
+         <input type="checkbox" name="rightAlignment" [checked]="alignment === 'right'" (change)="updateAlignment('right')"> Right
+    </label>
+    
+  </div>
+  
+  <!-- display name using string interpolation in upperCase -->
+  <div class="result">
+    <h2 [style.font-family]="font" [style.font-size.px]="size" [style.text-align]="alignment">
+      Hello {{ name.toUpperCase() }}! 
+    </h2> 
+  </div>
+  

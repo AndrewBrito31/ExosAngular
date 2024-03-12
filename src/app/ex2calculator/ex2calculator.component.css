@@ -1,0 +1,49 @@
+/* ex2calculator.component.css */
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-group input,
+  .input-group select {
+    margin-right: 10px;
+  }
+  
+  .input-group input:last-child {
+    margin-right: 0;
+  }
+  
+  .input-field {
+    width: 50%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .select-field {
+    width: 10%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .result {
+    margin-top: 20px;
+    font-size: 12px;
+  }
+  
+  .log button {
+    margin-left: 10px;
+  }
+  

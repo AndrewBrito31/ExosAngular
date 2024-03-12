@@ -1,0 +1,10 @@
+/* app.component.css */
+.header {
+    display: flex;
+    align-items: center; /* Align items vertically center */
+}
+  
+.header h1 {
+    margin-right: auto; /* Pushes the date/time component to the right */
+}
+  

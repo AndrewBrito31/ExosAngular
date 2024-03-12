@@ -1,0 +1,31 @@
+<h2>Exercise 3 - Bank Transactions</h2>
+
+<!-- table populated with results from transactions.json -->
+<table>
+  <thead>
+    <tr>
+      <!-- event binding triggers the sortBy() method with argument 'id' when the column header is clicked;
+           Angular interpolation ternary expression to render either an up-arrow ('▲'), a down-arrow ('▼'),
+           or an empty string, based on the current sorting state.  -->
+      <th (click)="sortBy('id')">ID <span>{{ sortByColumn === 'id' ? (sortDirection === 'asc' ? '▲' : '▼') : '' }}</span></th>
+      <th (click)="sortBy('amount')">Amount <span>{{ sortByColumn === 'amount' ? (sortDirection === 'asc' ? '▲' : '▼') : '' }}</span></th>
+      <th (click)="sortBy('balance')">Balance <span>{{ sortByColumn === 'balance' ? (sortDirection === 'asc' ? '▲' : '▼') : '' }}</span></th>
+      <th (click)="sortBy('label')">Label <span>{{ sortByColumn === 'label' ? (sortDirection === 'asc' ? '▲' : '▼') : '' }}</span></th>
+      <th (click)="sortBy('date')">Date <span>{{ sortByColumn === 'date' ? (sortDirection === 'asc' ? '▲' : '▼') : '' }}</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- render of the transactions.json using ngFor directive with usage of RouterModule -> routerlink 
+        binding the route path to navigate to transaction detail-->
+    <tr *ngFor="let transaction of sortedTransactions" [routerLink]="['/exercise3/transaction', transaction.id]">
+      <td>{{ transaction.id }}</td>
+      <td>{{ transaction.amount }}</td>
+      <td>{{ transaction.balance }}</td>
+      <td>{{ transaction.label }}</td>
+      <td>{{ transaction.date | date }}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+

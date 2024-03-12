@@ -1,0 +1,12 @@
+/* ex3bank-transaction-details.component.css */
+table {
+    width: auto;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  
